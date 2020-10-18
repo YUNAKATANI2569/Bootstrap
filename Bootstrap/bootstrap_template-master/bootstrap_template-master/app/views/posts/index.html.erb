@@ -1,8 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Posts</h1>
+<div class="container">  <!-- この行を追加 -->
+<div class="row">      <!-- この行を追加 -->
+    <div class="col-lg-4" style="background-color: orange;">
+      <h2>サイドバー</h2>
+    </div>
+    
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Title</th>
@@ -20,12 +26,15 @@
         <td><%= post.author %></td>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
+        
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>  <!-- この行を追加 -->
+</div>    <!-- この行を追加 -->
 
 <br>
 
-<%= link_to 'New Post', new_post_path %>
+<%= link_to 'New Post', new_post_path, class: "btn btn-default" %>
